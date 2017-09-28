@@ -9,4 +9,9 @@ public class LineCommandParser {
 
         return new Driver(lineParts[1]);
     }
+
+    public void parseTrip(Driver driver, String lineToParse) {
+        String[] lineParts = lineToParse.split(" ");
+        driver.addMiles(Double.parseDouble(lineParts[4]));
+    }
 }

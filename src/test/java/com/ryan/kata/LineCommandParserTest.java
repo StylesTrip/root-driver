@@ -30,4 +30,15 @@ public class LineCommandParserTest {
 
         Assert.assertEquals("Peter", driver.getDriverName());
     }
+
+    @Test
+    public void parser_parses_trip_info() {
+        String driverLine = "Driver Peter";
+        Driver driver = lineCommandParser.parse(driverLine);
+
+        String tripLine = "Trip Peter 01:00 02:00 10.0";
+        lineCommandParser.parseTrip(driver, tripLine);
+
+        Assert.assertEquals(10, driver.getTotalMilesDriven(), 0);
+    }
 }
