@@ -5,6 +5,8 @@ import com.ryan.kata.driver.Driver;
 public class LineCommandParser {
 
     public Driver parse(String lineToParse) {
-        return new Driver();
+        String[] lineParts = lineToParse.split(" ");
+
+        return new Driver(lineParts[1]);
     }
 }

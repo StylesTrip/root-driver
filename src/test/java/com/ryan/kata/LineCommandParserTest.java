@@ -16,4 +16,14 @@ public class LineCommandParserTest {
 
         Assert.assertNotNull(driver);
     }
+
+    @Test
+    public void parser_returns_Driver_with_proper_name() {
+        String driverLine = "Driver Peter";
+        LineCommandParser lineCommandParser = new LineCommandParser();
+
+        Driver driver = lineCommandParser.parse(driverLine);
+
+        Assert.assertEquals("Peter", driver.getDriverName());
+    }
 }
