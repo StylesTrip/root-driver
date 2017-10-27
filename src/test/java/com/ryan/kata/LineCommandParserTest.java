@@ -18,7 +18,7 @@ public class LineCommandParserTest {
     @Test
     public void parser_returns_Driver_when_first_command_is_Driver() {
         String driverLine = "Driver Peter";
-        Driver driver = lineCommandParser.parse(driverLine);
+        Driver driver = lineCommandParser.parseDriver(driverLine);
 
         Assert.assertNotNull(driver);
     }
@@ -26,7 +26,7 @@ public class LineCommandParserTest {
     @Test
     public void parser_returns_Driver_with_proper_name() {
         String driverLine = "Driver Peter";
-        Driver driver = lineCommandParser.parse(driverLine);
+        Driver driver = lineCommandParser.parseDriver(driverLine);
 
         Assert.assertEquals("Peter", driver.getDriverName());
     }
@@ -34,7 +34,7 @@ public class LineCommandParserTest {
     @Test
     public void parser_parses_trip_info() {
         String driverLine = "Driver Peter";
-        Driver driver = lineCommandParser.parse(driverLine);
+        Driver driver = lineCommandParser.parseDriver(driverLine);
 
         String tripLine = "Trip Peter 01:00 02:00 10.0";
         lineCommandParser.parseTrip(driver, tripLine);
